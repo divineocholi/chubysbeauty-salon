@@ -1,0 +1,223 @@
+/* General Body and Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #4A4A4A;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll from animations */
+}
+
+/* Header and Logo */
+.header {
+    background-color: #fff;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #4A4A4A;
+}
+
+.logo img {
+    max-height: 50px;
+    margin-right: 15px;
+}
+
+.logo span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #FF6F61;
+}
+
+/* Main Container and Hero Section */
+.offers-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FF6F61;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Offer Cards */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.offer-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.offer-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.offer-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.offer-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    height: 60px; /* Ensures consistent card height */
+}
+
+.price-section {
+    margin-bottom: 20px;
+}
+
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.new-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF6F61;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #FF6F61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+.cta-btn:hover {
+    background-color: #e55c50;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+
+/* Fade In */
+.animated-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slow Fade In for Subtitle */
+.animated-fade-in-slow {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Slide Up */
+.animated-slide-up {
+    animation: slideUp 1s ease-in-out;
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Float In */
+.animated-float-in {
+    animation: floatIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes floatIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Pulsing CTA Button */
+.animated-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offers-container {
+        padding: 10px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}

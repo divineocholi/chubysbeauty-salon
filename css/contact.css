@@ -1,0 +1,133 @@
+
+    :root {
+      --primary-color: #FF6F61;
+      --secondary-color: #fce4e4;
+      --text-color: black;
+      --light-color: black;
+      --border-color: #e0e0e0;
+      --card-background: #ffffff;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    .hero {
+      background-color: var(--secondary-color);
+      padding: 4rem 1rem;
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+    }
+
+    .subtitle {
+      color: #555;
+    }
+
+    .main-content {
+      padding: 2rem 1rem;
+    }
+
+    .contact-card {
+      background-color: var(--card-background);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .contact-button {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+    }
+
+    .contact-button:hover {
+      background-color: #e65c50;
+      box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item .icon {
+      color: var(--primary-color);
+      margin-right: 0.75rem;
+    }
+
+    .social-links .social-icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: var(--primary-color);
+      transition: transform 0.2s;
+    }
+
+    .social-links .social-icon:hover {
+      transform: scale(1.2);
+      color: #e65c50;
+    }
+
+    .faq-question {
+      padding: 1rem;
+      cursor: pointer;
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-answer {
+      padding: 0 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background-color: #fefefe;
+    }
+
+    .faq-item.is-active .faq-answer {
+      padding: 1rem;
+      max-height: 200px;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.is-active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--primary-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      .contact-card {
+        margin-bottom: 2rem;
+      }
+    } 
+#exit:hover{
+  color: red;
+}
+

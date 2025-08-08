@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment - ChubysBeauty Salon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8390003684.js" crossorigin="anonymous"></script>
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/booknow.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <a href="Landing Page.html">
+            <img src="images/logo-removebg-preview.png" alt="ChubysBeauty World Logo">
+            <span>ChubysBeauty saloon</span>
+        </a>
+
+    </div>
+            <a href="index.html" class="is-pulled-right">
+    <i id="exit" style="font-size: 2rem;" class="fa-solid fa-x"></i>
+</a>
+</header>
+
+<main class="appointment-container">
+        
+    <div class="appointment-card">
+        <h1 class="page-title">Book an Appointment</h1>
+        <p class="intro-text">
+            Ready to transform your look? Fill out the form below to secure your spot. We can't wait to give you a fresh new style!
+        </p>
+
+        <form action="https://formspree.io/f/xeozpkea" method="POST" class="appointment-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., +234 801 234 5678" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>-- Choose a service --</option>
+                    <option value="Wig Installation">Wig Installation</option>
+                    <option value="Hair Braiding">Hair Braiding</option>
+                    <option value="Hair Coloring">Hair Coloring</option>
+                    <option value="Styling & Treatment">Styling & Treatment</option>
+                    <option value="Wig Purchase">Wig Purchase</option>
+                </select>
+            </div>
+
+            <div class="form-group-flex">
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Notes (optional)</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Book My Appointment</button>
+        </form>
+
+        <div id="confirmation-message" style="display: none;">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2 class="success-title">Thank You!</h2>
+            <p class="success-text">Your appointment request has been sent successfully. We will contact you shortly to confirm the details. We look forward to seeing you!</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 ChubysBeauty Salon. All Rights Reserved.</p>
+</footer>
+
+<script>
+    var form = document.querySelector('.appointment-form');
+    var confirmation = document.getElementById('confirmation-message');
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      var data = new FormData(form);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", form.action);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          form.style.display = "none";
+          confirmation.style.display = "block";
+        } else {
+          alert("Oops! There was a problem submitting your form. Please try again.");
+        }
+      };
+      xhr.send(data);
+    });
+</script>
+
+</body>
+</html>
