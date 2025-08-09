@@ -13,6 +13,12 @@ body {
 }
 
 
+.navbar-link:hover{
+  background-color: transparent;
+  color: #FF6F61;
+}
+
+
 
 
 .navbar-item{
@@ -1050,3 +1056,13 @@ ul {
   }
 }
 
+
+/* ------------------------------------------- */
+/* Styles for screens larger than 1024px (laptops/desktops) */
+/* ------------------------------------------- */
+@media (min-width: 1024px) {
+  .wrapper{
+    margin-bottom: 40px;
+  }
+  
+}
